@@ -31,3 +31,23 @@ def generate_soundex(name):
     soundex = soundex.ljust(4, '0')
 
     return soundex
+
+
+def test_generate_soundex():
+    test_cases = [
+        {"name": "Smith", "expected": "S530"},
+        {"name": "Babbitt", "expected": "B130"},
+        {"name": "Jackson", "expected": "J250"},
+        {"name": "Li", "expected": "L000"},
+        {"name": "O'Brien", "expected": "O165"},
+        {"name": "Ellis", "expected": "E420"},
+        {"name": "Knight", "expected": "K523"},
+    ]
+
+    for i, test in enumerate(test_cases, start=1):
+        result = generate_soundex(test["name"])
+        assert result == test["expected"], f"Test case {i} failed: {test['name']} -> {result} (expected {test['expected']})"
+        print(f"Test case {i} passed: {test['name']} -> {result}")
+
+# Run the tests
+test_generate_soundex()
