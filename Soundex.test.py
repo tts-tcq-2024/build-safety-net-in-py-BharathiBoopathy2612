@@ -8,7 +8,7 @@ class TestSoundex(unittest.TestCase):
         self.assertEqual(generate_soundex(""), "")
  
     def test_single_character(self):
-        self.assertEqual(generate_soundex("M"), "M000")
+        self.assertEqual(generate_soundex("A"), "A000")
  
     def test_two_characters(self):
         self.assertEqual(generate_soundex("MI"), "M000")
